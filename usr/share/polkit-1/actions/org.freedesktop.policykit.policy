@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD polkit Policy Configuration 1.0//EN"
+"http://www.freedesktop.org/software/polkit/policyconfig-1.dtd">
+<policyconfig>
+  <vendor>The polkit project</vendor>
+  <vendor_url>http://www.freedesktop.org/wiki/Software/polkit/</vendor_url>
+
+  <action id="org.freedesktop.policykit.exec">
+    <description>Run a program as another user</description>
+    <description xml:lang="cs">Spustit program jako jiný uživatel</description>
+    <message>Authentication is required to run a program as another user</message>
+    <message xml:lang="cs">Pro spuštění programu pod jiným uživatelem je vyžadováno ověření</message>
+    <message xml:lang="da">Autorisering er påkrævet for at afvikle et program som en anden bruger</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+      <allow_inactive>yes</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+
+</policyconfig>

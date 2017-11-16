@@ -1,0 +1,6 @@
+UUID=a782f43c-2362-482d-b24c-6d233ff24854 / ext4 defaults 0 1
+tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
+
+UUID=A21A606D1A604081	/media/addy/Windows		ntfs rw,nosuid,nodev,noatime,allow_other 0 0
+UUID=01D2AF3E91F4D320	/media/addy/Media		ntfs rw,nosuid,nodev,noatime,allow_other 0 0
+UUID=01D1F13C0D674AE0	/media/addy/Software	ntfs rw,nosuid,nodev,noatime,allow_other 0 0

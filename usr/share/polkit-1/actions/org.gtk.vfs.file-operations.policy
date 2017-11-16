@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1.0/policyconfig.dtd">
+<policyconfig>
+  <vendor>GVfs</vendor>
+  <vendor_url>http://git.gnome.org/browse/gvfs</vendor_url>
+  <action id="org.gtk.vfs.file-operations-helper">
+    <description>Perform file operations</description>
+    <description xml:lang="zh_TW">執行檔案操作</description>
+    <description xml:lang="zh_CN">执行文件操作</description>
+    <description xml:lang="vi">Thực hiện các thao tác tập tin</description>
+    <description xml:lang="tr">Dosya işlemleri gerçekleştir</description>
+    <description xml:lang="sv">Utför filåtgärder</description>
+    <description xml:lang="sr@latin">Obavite radnje nad datotekom</description>
+    <description xml:lang="sr">Обавите радње над датотеком</description>
+    <description xml:lang="sl">Izvedi datotečna opravila</description>
+    <description xml:lang="sk">Vykonanie operácií so súbormi</description>
+    <description xml:lang="ru">Выполнение операций с файлами</description>
+    <description xml:lang="pt_BR">Realizar operações de arquivos</description>
+    <description xml:lang="pl">Wykonywanie działań na plikach</description>
+    <description xml:lang="nl">Bestandsbewerkingen uitvoeren</description>
+    <description xml:lang="nb">Utfør filoperasjoner</description>
+    <description xml:lang="lv">Veic darbības ar datnēm</description>
+    <description xml:lang="lt">Vykdyti veiksmus su failais</description>
+    <description xml:lang="ko">파일 동작 수행</description>
+    <description xml:lang="kk">Файл әрекеттерін орындау</description>
+    <description xml:lang="it">Esegui operazioni sui file</description>
+    <description xml:lang="id">Laksanakan operasi berkas</description>
+    <description xml:lang="hu">Fájlműveletek végrehajtása</description>
+    <description xml:lang="fr">Effectuer des opérations sur les fichiers</description>
+    <description xml:lang="fi">Suorita tiedostotoimenpiteitä</description>
+    <description xml:lang="eu">Landu fitxategien eragiketak</description>
+    <description xml:lang="en_GB">Perform file operations</description>
+    <description xml:lang="el">Εκτέλεση λειτουργιών αρχείου</description>
+    <description xml:lang="de">Dateioperationen ausführen</description>
+    <description xml:lang="da">Udfør filoperationer</description>
+    <description xml:lang="cs">Provedení souborových operací</description>
+    <description xml:lang="ca">Realitza operacions de fitxer</description>
+    <message>Authentication is required to perform file operations</message>
+    <message xml:lang="zh_TW">執行檔案操作需要核對</message>
+    <message xml:lang="zh_CN">执行文件操作需要认证</message>
+    <message xml:lang="vi">Việc xác thực bị yêu cầu thực hiện các thao tác tập tin</message>
+    <message xml:lang="tr">Dosya işlemleri gerçekleştirmek için yetkilendirme gerekiyor</message>
+    <message xml:lang="sv">Autentisering krävs för att utföra filåtgärder</message>
+    <message xml:lang="sr@latin">Potrebno je potvrđivanje identiteta da biste obavili radnje nad datotekom</message>
+    <message xml:lang="sr">Потребно је потврђивање идентитета да бисте обавили радње над датотеком</message>
+    <message xml:lang="sl">Za izvajanje datotečnih opravil je zahtevana overitev</message>
+    <message xml:lang="sk">Na vykonanie operácií so súbormi sa požaduje overenie totožnosti</message>
+    <message xml:lang="ru">Требуется аутентификация для выполнения операций с файлами</message>
+    <message xml:lang="pt_BR">É necessária autenticação para realizar operações de arquivos</message>
+    <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby wykonywać działania na plikach</message>
+    <message xml:lang="nl">Om bestandsbewerkingen uit te voeren is authenticatie vereist</message>
+    <message xml:lang="nb">Autentisering kreves for å utføre filoperasjoner</message>
+    <message xml:lang="lv">Nepieciešama autentificēšanās, lai veiktu darbības ar datnēm</message>
+    <message xml:lang="lt">Norint atlikti veiksmus su failais reikia patvirtinti tapatybę</message>
+    <message xml:lang="ko">파일 동작을 수행하려면 인증이 필요합니다</message>
+    <message xml:lang="kk">Файлдық әрекеттерді жасау үшін аутентификация керек</message>
+    <message xml:lang="it">È richiesto autenticarsi per eseguire operazioni sui file</message>
+    <message xml:lang="id">Otentikasi diperlukan untuk melakukan operasi berkas</message>
+    <message xml:lang="hu">Hitelesítés szükséges a fájlműveletek végrehajtásához</message>
+    <message xml:lang="fr">Il est nécessaire de s'authentifier pour effectuer des opérations sur les fichiers</message>
+    <message xml:lang="fi">Tunnistautuminen vaaditaan tiedostotoimenpiteiden suorittamiseksi</message>
+    <message xml:lang="eu">Autentifikazioa behar da fitxategien eragiketak lantzeko</message>
+    <message xml:lang="en_GB">Authentication is required to perform file operations</message>
+    <message xml:lang="el">Απαιτείται πιστοποίηση για εκτέλεση λειτουργιών αρχείου</message>
+    <message xml:lang="de">Anmeldung ist für die Ausführung von Dateioperationen erforderlich</message>
+    <message xml:lang="da">Der kræves godkendelse for at udføre filoperationer</message>
+    <message xml:lang="cs">K provedení souborových operací je vyžadováno ověření</message>
+    <message xml:lang="ca">Cal autenticació per realitzar operacions de fitxer</message>
+    <defaults>
+      <allow_any>no</allow_any>
+      <allow_inactive>no</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/libexec/gvfsd-admin</annotate>
+  </action>
+  <action id="org.gtk.vfs.file-operations">
+    <description>Perform file operations</description>
+    <description xml:lang="zh_TW">執行檔案操作</description>
+    <description xml:lang="zh_CN">执行文件操作</description>
+    <description xml:lang="vi">Thực hiện các thao tác tập tin</description>
+    <description xml:lang="tr">Dosya işlemleri gerçekleştir</description>
+    <description xml:lang="sv">Utför filåtgärder</description>
+    <description xml:lang="sr@latin">Obavite radnje nad datotekom</description>
+    <description xml:lang="sr">Обавите радње над датотеком</description>
+    <description xml:lang="sl">Izvedi datotečna opravila</description>
+    <description xml:lang="sk">Vykonanie operácií so súbormi</description>
+    <description xml:lang="ru">Выполнение операций с файлами</description>
+    <description xml:lang="pt_BR">Realizar operações de arquivos</description>
+    <description xml:lang="pl">Wykonywanie działań na plikach</description>
+    <description xml:lang="nl">Bestandsbewerkingen uitvoeren</description>
+    <description xml:lang="nb">Utfør filoperasjoner</description>
+    <description xml:lang="lv">Veic darbības ar datnēm</description>
+    <description xml:lang="lt">Vykdyti veiksmus su failais</description>
+    <description xml:lang="ko">파일 동작 수행</description>
+    <description xml:lang="kk">Файл әрекеттерін орындау</description>
+    <description xml:lang="it">Esegui operazioni sui file</description>
+    <description xml:lang="id">Laksanakan operasi berkas</description>
+    <description xml:lang="hu">Fájlműveletek végrehajtása</description>
+    <description xml:lang="fr">Effectuer des opérations sur les fichiers</description>
+    <description xml:lang="fi">Suorita tiedostotoimenpiteitä</description>
+    <description xml:lang="eu">Landu fitxategien eragiketak</description>
+    <description xml:lang="en_GB">Perform file operations</description>
+    <description xml:lang="el">Εκτέλεση λειτουργιών αρχείου</description>
+    <description xml:lang="de">Dateioperationen ausführen</description>
+    <description xml:lang="da">Udfør filoperationer</description>
+    <description xml:lang="cs">Provedení souborových operací</description>
+    <description xml:lang="ca">Realitza operacions de fitxer</description>
+    <message>Authentication is required to perform file operations</message>
+    <message xml:lang="zh_TW">執行檔案操作需要核對</message>
+    <message xml:lang="zh_CN">执行文件操作需要认证</message>
+    <message xml:lang="vi">Việc xác thực bị yêu cầu thực hiện các thao tác tập tin</message>
+    <message xml:lang="tr">Dosya işlemleri gerçekleştirmek için yetkilendirme gerekiyor</message>
+    <message xml:lang="sv">Autentisering krävs för att utföra filåtgärder</message>
+    <message xml:lang="sr@latin">Potrebno je potvrđivanje identiteta da biste obavili radnje nad datotekom</message>
+    <message xml:lang="sr">Потребно је потврђивање идентитета да бисте обавили радње над датотеком</message>
+    <message xml:lang="sl">Za izvajanje datotečnih opravil je zahtevana overitev</message>
+    <message xml:lang="sk">Na vykonanie operácií so súbormi sa požaduje overenie totožnosti</message>
+    <message xml:lang="ru">Требуется аутентификация для выполнения операций с файлами</message>
+    <message xml:lang="pt_BR">É necessária autenticação para realizar operações de arquivos</message>
+    <message xml:lang="pl">Wymagane jest uwierzytelnienie, aby wykonywać działania na plikach</message>
+    <message xml:lang="nl">Om bestandsbewerkingen uit te voeren is authenticatie vereist</message>
+    <message xml:lang="nb">Autentisering kreves for å utføre filoperasjoner</message>
+    <message xml:lang="lv">Nepieciešama autentificēšanās, lai veiktu darbības ar datnēm</message>
+    <message xml:lang="lt">Norint atlikti veiksmus su failais reikia patvirtinti tapatybę</message>
+    <message xml:lang="ko">파일 동작을 수행하려면 인증이 필요합니다</message>
+    <message xml:lang="kk">Файлдық әрекеттерді жасау үшін аутентификация керек</message>
+    <message xml:lang="it">È richiesto autenticarsi per eseguire operazioni sui file</message>
+    <message xml:lang="id">Otentikasi diperlukan untuk melakukan operasi berkas</message>
+    <message xml:lang="hu">Hitelesítés szükséges a fájlműveletek végrehajtásához</message>
+    <message xml:lang="fr">Il est nécessaire de s'authentifier pour effectuer des opérations sur les fichiers</message>
+    <message xml:lang="fi">Tunnistautuminen vaaditaan tiedostotoimenpiteiden suorittamiseksi</message>
+    <message xml:lang="eu">Autentifikazioa behar da fitxategien eragiketak lantzeko</message>
+    <message xml:lang="en_GB">Authentication is required to perform file operations</message>
+    <message xml:lang="el">Απαιτείται πιστοποίηση για εκτέλεση λειτουργιών αρχείου</message>
+    <message xml:lang="de">Anmeldung ist für die Ausführung von Dateioperationen erforderlich</message>
+    <message xml:lang="da">Der kræves godkendelse for at udføre filoperationer</message>
+    <message xml:lang="cs">K provedení souborových operací je vyžadováno ověření</message>
+    <message xml:lang="ca">Cal autenticació per realitzar operacions de fitxer</message>
+    <defaults>
+      <allow_any>yes</allow_any>
+      <allow_inactive>yes</allow_inactive>
+      <allow_active>yes</allow_active>
+    </defaults>
+  </action>
+</policyconfig>

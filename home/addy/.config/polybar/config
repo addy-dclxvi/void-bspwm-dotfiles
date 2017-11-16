@@ -1,0 +1,140 @@
+[colors]
+
+background = #2f343f
+background-alt = #4f545f
+foreground = #d8dee8
+foreground-alt = #787e68
+accent = #81a1c1
+alert = #ebcb8b
+
+
+[bar/top]
+
+monitor = LVDS-1
+height = 24
+fixed-center = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+padding-left = 4
+padding-right = 4
+module-margin-left = 2
+module-margin-right = 2
+font-0 = Noto Sans:pixelsize=8
+font-1 = FontAwesome:pixelsize=8
+;tray-position = right
+;tray-padding = 2
+;tray-background = ${colors.background}
+wm-restack = bspwm
+modules-left = bspwm
+modules-center = xwindow
+modules-right = wlan volume date
+
+
+[module/bspwm]
+
+type = internal/bspwm
+label-focused = %name%
+label-focused-background= ${colors.background-alt}
+label-focused-padding = 3
+label-occupied = %name%
+label-occupied-padding = 3
+label-occupied-foreground= ${colors.foreground}
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 3
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 3
+
+
+[module/xwindow]
+
+type = internal/xwindow
+label = %title:0:100:...%
+
+
+[module/mpd]
+
+type = internal/mpd
+;format-online = <icon-prev>  <label-time>  <label-song>  <icon-next>
+format-online = <toggle>  <label-song>
+;format-online = <label-time>  <label-song>
+;icon-prev = 
+;icon-next = 
+icon-play = 
+icon-pause = 
+;icon-prev-foreground = ${colors.accent}
+;icon-next-foreground = ${colors.accent}
+icon-pause-foreground = ${colors.accent}
+label-song-maxlen = 45
+label-song-ellipsis = true
+
+
+[module/wlan]
+
+type = internal/network
+interface = wlp2s0
+interval = 15
+format-connected = <ramp-signal>  <label-connected>
+label-connected = %essid%
+format-disconnected = <label-disconnected>
+label-disconnected =   Disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
+ramp-signal-5 =  
+ramp-signal-foreground = ${colors.accent}
+
+
+
+[module/volume]
+
+type = internal/volume
+format-volume = <label-volume> <bar-volume>
+label-volume = " "
+label-volume-foreground = ${colors.accent}
+format-muted-prefix = " "
+format-muted-foreground = ${colors.accent}
+label-muted = Muted
+label-muted-foreground= ${colors.foreground-alt}
+bar-volume-width = 6
+bar-volume-indicator = 
+bar-volume-fill = ─
+bar-volume-empty = ─
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+
+[module/battery]
+
+type = internal/battery
+full-at = 98
+battery = BAT1
+adapter = ACAD
+poll-interval = 60
+format-charging = <ramp-capacity>  <label-charging>
+label-charging =  %percentage%%
+label-full = Full
+format-discharging = <ramp-capacity>  <label-discharging>
+label-discharging = %percentage%%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.accent}
+
+
+[module/date]
+
+type = internal/date
+interval = 30
+label = " %date% %time%"
+date =
+date-alt = %a %d
+time = %H:%M
+time-alt = 
+format-prefix = 
+format-prefix-foreground = ${colors.accent}
