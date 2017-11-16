@@ -24,7 +24,7 @@ But everyone are welcome to use this. And remember to read the config files befo
 
 - **Xresources** <br /> Urxvt, rofi, xft, and colour scheme configuration.
 
-- **Polybar** <br /> Very basic config, to keep it lightweight. No external modules, no external script, only use simple modules, only needs two fonts, Noto Sans & Awesome. Both ar available in the Void repository.
+- **Polybar** <br /> Very basic config, to keep it lightweight. No external modules, no external script, only use simple modules, only needs two fonts, Noto Sans & Awesome. Both are available in the Void repository.
   
 - **zshrc** <br /> Containing some useful alias, and simple [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh) config. Including my minimalist oh-my-zsh themes (in ~/.oh-my-zsh folder).
   
@@ -34,7 +34,7 @@ But everyone are welcome to use this. And remember to read the config files befo
 
 - **ncmpcpp** <br /> Just a simple ncmpcpp config, integrated with Dunst notification on song change.
 
-- **Xinitrc** <br /> I'm not using display manager, `startx` is enough. It also contain dbus launcher for Thunar to fix missing trash, mount, unmount, and another *gvfs* feature. And a command to export *~/.bin* folder to $PATH, useful for custom script.
+- **Xinitrc** <br /> I'm not using display manager, `startx` is enough.It also contain dbus launcher for Thunar to fix missing trash, mount, unmount, and another *gvfs* feature. And a command to export *~/.bin* folder to $PATH, useful for custom script.
 
 - **xsettingsd** <br /> Fontconfig daemon, without this fonts in most apps will be rasterized.
 
@@ -64,8 +64,11 @@ Some of these configs are hardcoded, that mean You need to edit the configs befo
 
 ## Package List
 I can't remember one by one what packages need to be installed to make everything works.
-But I have generated a [pkglist.txt](https://github.com/addy-dclxvi/void-bspwm-dotfiles/blob/master/pkglist.txt) file. It contains a list of my installed packages, maybe it will help You to decide what packages need to be installed.
-It is pretty barebones & not so bloated, only containing 469 packages. <br />
+But I have generated a [pkglist.txt](https://github.com/addy-dclxvi/void-bspwm-dotfiles/blob/master/pkglist.txt) file.
+It contains a list of my installed packages, maybe it will help You to decide what packages need to be installed.
+It is pretty barebones & not so bloated, only containing 469 packages.
+And I never install software using oldskool `make install` method, so my package list is sane & clean.
+Don't forget that some packages need the *non-free* repo to be enabled.<br />
 
 
 ## Non-Home Files
