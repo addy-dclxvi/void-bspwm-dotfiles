@@ -3,12 +3,12 @@
 </p>
 
 ## Introduction
-My personal backup of my Void Linux setup. Just to make me remember what to do if I do another Void Linux clean & minimal install.
-But everyone are welcome to use this. But remember to read the config files before You use it.
+My personal backup of my **Void Linux** setup. Just to make me remember what to do, if I do another Void Linux clean install (I use the *DE-less* iso).
+But everyone are welcome to use this. And remember to read the config files before You use it.
 
 ## Preview
 **Enter The Void** <br />
-![alt text](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview.jpg) <br />
+![alt text](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview.png) <br />
 **WM** : Bspwm <br />
 **Panel** : Polybar <br />
 **Panel Font** : Noto Sans & Awesome <br />
@@ -68,7 +68,7 @@ But I have generated a [pkglist.txt](https://github.com/addy-dclxvi/void-bspwm-d
 It is pretty barebones & not so bloated, only containing 469 packages. <br />
 
 
-## Non-Home files
+## Non-Home Files
 My files those are placed in the `/` directory contains some dangerous configurations. Don't use it unless You know what are You doing. Maybe I will write some *Readme* files about them. If I'm not lazy.
 
 ## My Links
