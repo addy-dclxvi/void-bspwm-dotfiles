@@ -17,8 +17,9 @@ then
 fi
 
 # Make ~/.bin folder executable
-export PATH="${PATH}:$HOME/.scripts"
+export PATH="${PATH}:$HOME/.bin"
 
 # Autostart
 # I put most of autostart in bspwmrc
+sxhkd &
 exec bspwm

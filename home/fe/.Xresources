@@ -1,9 +1,10 @@
 ! ------------------------------------------------------------------------------
-! Dracula Color Scheme
+! Nord Color Scheme
+! By Arctic Ice Studio 
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:   #f8f8f2
+*.foreground:   #d8dee8
 *.background:   #2f343f
 *.cursorColor:  #b48ead
 
@@ -12,28 +13,28 @@
 *.color8  : #434a5a
 
 ! red
-*.color1  : #ff5555
-*.color9  : #cc4444
+*.color1  : #bf616a
+*.color9  : #b3555e
 
 ! green
-*.color2  : #50fa7b
-*.color10 : #41cc64
+*.color2  : #a3be8c
+*.color10 : #93ae7c
 
 ! yellow
-*.color3  : #f1fa8c
-*.color11 : #c5cc72
+*.color3  : #ebcb8b
+*.color11 : #dbbb7b
 
 ! blue
-*.color4  : #bd93f9
-*.color12 : #9b78cc
+*.color4  : #81a1c1
+*.color12 : #7191b1
 
 ! magenta
-*.color5  : #ff79c6
-*.color13 : #cc619f
+*.color5  : #b48ead
+*.color13 : #a6809f
 
 ! cyan
-*.color6  : #8be9fd
-*.color14 : #70bccc
+*.color6  : #93e5cc
+*.color14 : #7bcdb4
 
 ! white
 *.color7  : #e5e9f0
@@ -44,33 +45,32 @@
 ! URxvt configs
 ! ------------------------------------------------------------------------------
 
-! general settings
-URxvt*saveline:         15000
+URxvt*saveline:         2000
 URxvt*termName:         rxvt-256color
 URxvt*iso14755:         false
-
-! appearance
 URxvt*depth:            32
-!URxvt*background:      [100]#2f343f
-URxvt.highlightColor:   #81a1c1
+URxvt.underlineColor:   #81a1c1
+URxvt.highlightColor:   #7191b1
+URxvt.throughColor:     #93e5cc
+URxvt*cursorColor:      #b48ead
+URxvt*cursorColor2:     #d8dee8
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:  false
-URxvt*internalBorder:   24
+URxvt*internalBorder:   0
 URxvt*externalBorder:   0
-URxvt.geometry: 		92x16
-
-! fonts
-URxvt*letterSpace: 	    		0
-URxvt.lineSpace: 				0
-URxvt*font:				-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1
-URxvt*boldFont:			-lucy-tewi-bold-r-normal-*-11-80-100-100-c-60-iso10646-1
-URxvt*italicFont:		-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1
-URxvt*boldItalicFont:	-lucy-tewi-bold-r-normal-*-11-80-100-100-c-60-iso10646-1
-
-! perl extensions
+URxvt.colorIT:      	#a3be8c
+URxvt.colorBD:      	#e5e9f0
+URxvt.colorUL:      	#81a1c1
+URxvt.geometry: 		92x24
+URxvt.internalBorder:	24
+URxvt*letterSpace: 	    0
+URxvt.lineSpace: 		1
+URxvt*font:             xft:Dejavu Sans Mono:regular:size=8
+URxvt*imFont:           xft:Dejavu Sans Mono:regular:size=8
+URxvt*boldFont:         xft:Dejavu Sans Mono:bold:size=8
+URxvt*italicFont:       xft:Dejavu Sans Mono:italic:size=8
+URxvt*boldItalicFont:   xft:Dejavu Sans Mono:regular:size=8
 URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select
-
-! macros for clipboard and selection
 URxvt.copyCommand:      xclip -i -selection clipboard
 URxvt.pasteCommand:     xclip -o -selection clipboard
 URxvt.keysym.M-c:       perl:clipboard:copy
@@ -81,11 +81,13 @@ URxvt.keysym.M-s:       perl:keyboard-select:search
 URxvt.keysym.M-u:       perl:url-select:select_next
 URxvt.urlLauncher:      firefox
 URxvt.underlineURLs:    true
-URxvt.urlButton:        1     
-
-! scroll one line
-URxvt.keysym.Shift-Up: command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.urlButton:        1
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 16
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    4
+URxvt*buffered:         false          
+URxvt.urgentOnBell: 	True
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
