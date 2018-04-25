@@ -4,68 +4,79 @@
 
 ! special
 *.foreground:   #f8f8f2
-*.background:   #2f343f
-*.cursorColor:  #b48ead
+*.background:   #222d32
+*.cursorColor:  #bd93f9
 
 ! black
-*.color0  : #4b5262
-*.color8  : #434a5a
+*.color0:       #44475a
+*.color8:       #4d4d4d
 
 ! red
-*.color1  : #ff5555
-*.color9  : #cc4444
+*.color1:       #ff5555
+*.color9:       #ff6e67
 
 ! green
-*.color2  : #50fa7b
-*.color10 : #41cc64
+*.color2:       #50Fa7b
+*.color10:      #5af78e
 
 ! yellow
-*.color3  : #f1fa8c
-*.color11 : #c5cc72
+*.color3:       #f1fa8c
+*.color11:      #f4f99d
 
 ! blue
-*.color4  : #bd93f9
-*.color12 : #9b78cc
+*.color4:       #bd93f9
+*.color12:      #caa9fa
 
 ! magenta
-*.color5  : #ff79c6
-*.color13 : #cc619f
+*.color5:       #ff79c6
+*.color13:      #ff92d0
 
 ! cyan
-*.color6  : #8be9fd
-*.color14 : #70bccc
+*.color6:       #8be9fd
+*.color14:      #9aedfe
 
 ! white
-*.color7  : #e5e9f0
-*.color15 : #d1d5dc
+*.color7:       #bfbfbf
+*.color15:      #e6e6e6
 
+
+! ------------------------------------------------------------------------------
+! Fonts
+! ------------------------------------------------------------------------------
+
+*.font:				-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1, \
+						-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1
+*.boldFont:			-lucy-tewi-bold-r-normal-*-11-80-100-100-c-60-iso10646-1, \
+						-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1
+*.italicFont:		-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1, \
+						-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1
+*.boldItalicFont:	-lucy-tewi-bold-r-normal-*-11-80-100-100-c-60-iso10646-1, \
+						-wuncon-siji-medium-r-normal-*-10-100-75-75-c-80-iso10646-1
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
 ! ------------------------------------------------------------------------------
 
+! font spacing
+URxvt*letterSpace: 	    0
+URxvt.lineSpace: 		0
+
 ! general settings
 URxvt*saveline:         15000
 URxvt*termName:         rxvt-256color
 URxvt*iso14755:         false
+URxvt*urgentOnBell:		true
 
 ! appearance
-URxvt*depth:            32
-!URxvt*background:      [100]#2f343f
+!URxvt*depth:            32
+!URxvt*background:      [95]#343c48
+URxvt*depth:            24
 URxvt.highlightColor:   #81a1c1
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:  false
 URxvt*internalBorder:   24
 URxvt*externalBorder:   0
-URxvt.geometry: 		92x16
-
-! fonts
-URxvt*letterSpace: 	    		0
-URxvt.lineSpace: 				0
-URxvt*font:				-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1
-URxvt*boldFont:			-lucy-tewi-bold-r-normal-*-11-80-100-100-c-60-iso10646-1
-URxvt*italicFont:		-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1
-URxvt*boldItalicFont:	-lucy-tewi-bold-r-normal-*-11-80-100-100-c-60-iso10646-1
+URxvt.geometry: 		84x22
 
 ! perl extensions
 URxvt.perl-ext-common:  default,clipboard,url-select,keyboard-select
@@ -84,8 +95,14 @@ URxvt.underlineURLs:    true
 URxvt.urlButton:        1     
 
 ! scroll one line
-URxvt.keysym.Shift-Up: command:\033]720;1\007
-URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Shift-Up:		command:\033]720;1\007
+URxvt.keysym.Shift-Down:	command:\033]721;1\007
+
+! control arrow
+URxvt.keysym.Control-Up:	\033[1;5A
+URxvt.keysym.Control-Down:	\033[1;5B
+URxvt.keysym.Control-Left:	\033[1;5D
+URxvt.keysym.Control-Right:	\033[1;5C
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme

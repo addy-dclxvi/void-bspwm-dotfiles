@@ -79,7 +79,7 @@
 root ALL=(ALL) ALL
 
 ## Uncomment to allow members of group wheel to execute any command
-%wheel ALL=(ALL) ALL
+# %wheel ALL=(ALL) ALL
 
 ## Same thing without a password
 %wheel ALL=(ALL) NOPASSWD: ALL

@@ -5,10 +5,13 @@ bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI'
 bspc config focus_follows_pointer true
 bspc config border_width        4
 bspc config window_gap         	16
-bspc config focused_border_color "#4c566a" 
-bspc config normal_border_color "#343c48"
+bspc config focused_border_color "#bd93f9" 
+bspc config normal_border_color "#44475a"
+bspc config presel_feedback_color "#50Fa7b"
+bspc config borderless_monocle true
+bspc config single_monocle false
 
-## window rule
+## window rules
 # 1 > terminal
 bspc rule -a URxvt desktop='^1' follow=on focus=on
 # 2 > web
@@ -25,6 +28,8 @@ bspc rule -a Soffice desktop='^4' follow=on focus=on
 bspc rule -a libreoffice-calc desktop='^4' follow=on focus=on
 bspc rule -a libreoffice-writer desktop='^4' follow=on focus=on
 bspc rule -a libreoffice-impress desktop='^4' follow=on focus=on
+bspc rule -a *:libreofficedev desktop='^4' follow=on focus=on
+bspc rule -a *:soffice desktop='^4' follow=on focus=on
 bspc rule -a Evince desktop='^4' follow=on focus=on
 bspc rule -a Gucharmap desktop='^4' follow=on focus=on
 # 5 > media
@@ -44,16 +49,20 @@ bspc rule -a Lxrandr desktop='^6' state=floating follow=on
 bspc rule -a Arandr desktop='^6' state=floating follow=on
 # special rules
 bspc rule -a Audacious state=floating follow=on
+bspc rule -a Firefox:Places state=floating
 bspc rule -a Viewnior state=floating follow=on
 bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
 ## autostart
 export PATH="${PATH}:$HOME/.config/bspwm"
-killall sxhkd lemonbar xsettingsd
-#xset fp+ ~/.fonts/misc &
-sxhkd &
-xsettingsd &
-panel &
-xsetroot -solid "#906873"
+hsetroot -center ~/.wallpaper.jpg
 xsetroot -cursor_name left_ptr
+xrdb .Xresources
+xbacklight -set 10
+xset fp+ ~/.fonts/misc
+killall sxhkd lemonbar xsettingsd dunst
+sxhkd &
+panel &
+xsettingsd &
+dunst &

@@ -1,6 +1,7 @@
-UUID=a782f43c-2362-482d-b24c-6d233ff24854 / ext4 defaults 0 1
+UUID=3547f6e4-d7cb-44d1-a5f6-2c532e9dc2ad / ext4 defaults 0 1
+UUID=7ebeca3c-e547-4e2d-a9da-e76d54135778 none swap sw 0 0
 tmpfs /tmp tmpfs defaults,nosuid,nodev 0 0
 
-UUID=A21A606D1A604081	/media/addy/Windows		ntfs rw,nosuid,nodev,noatime,allow_other 0 0
-UUID=01D2AF3E91F4D320	/media/addy/Media		ntfs rw,nosuid,nodev,noatime,allow_other 0 0
-UUID=01D1F13C0D674AE0	/media/addy/Software	ntfs rw,nosuid,nodev,noatime,allow_other 0 0
+UUID=A21A606D1A604081	/run/media/addy/Windows		ntfs rw,nosuid,nodev,noatime,allow_other 0 0
+UUID=01D2AF3E91F4D320	/run/media/addy/Media		ntfs rw,nosuid,nodev,noatime,allow_other 0 0
+UUID=01D1F13C0D674AE0	/run/media/addy/Software	ntfs rw,nosuid,nodev,noatime,allow_other 0 0

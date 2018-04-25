@@ -4,7 +4,7 @@ super + Return
 
 ## rofi launcher
 super + d
-	rofi -modi run,drun,window -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'
+	rofi-apps
 
 ## launch common apps
 super + shift + {f,w,g}
@@ -12,7 +12,7 @@ super + shift + {f,w,g}
 	
 ## volume control
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-	amixer {-c 0 set PCM 4dB+,-c 0 set PCM 4dB-,set Master toggle}
+	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}
 	
 ## music control
 XF86Audio{Next,Prev,Play,Stop}
@@ -24,7 +24,7 @@ super + s
 		
 ## take a screenshot
 Print
-	scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+	screeny
 
 ## quit bspwm normally
 super + control + Escape
@@ -35,7 +35,7 @@ super + shift + BackSpace
 	pkill panel; bspwmrc
 
 ## close or kill app
-super + {_,shift + }Escape
+super + {_,shift + }c
 	bspc node {-c,-k}
 
 ## close app (common way)

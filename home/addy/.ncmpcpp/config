@@ -56,7 +56,7 @@ progressbar_look = "─╼ "
 #default_find_mode = wrapped
 #default_tag_editor_pattern = %n - %t
 header_visibility = no
-statusbar_visibility = yes
+statusbar_visibility = no
 titles_visibility = no
 #header_text_scrolling = yes
 #cyclic_scrolling = no
@@ -88,7 +88,7 @@ follow_now_playing_lyrics = no
 #tags_separator = " | "
 #tag_editor_extended_numeration = no
 #media_library_sort_by_mtime = no
-enable_window_title = no
+enable_window_title = yes
 external_editor = nano
 colors_enabled = yes
 empty_tag_color = red
@@ -99,14 +99,15 @@ state_flags_color = yellow
 main_window_color = default
 color1 = red
 color2 = red
-main_window_highlight_color = white
+#main_window_highlight_color = white
 progressbar_color = black
 progressbar_elapsed_color = red
 statusbar_color = default
 alternative_ui_separator_color = magenta
-active_column_color = red
+#active_column_color = red
 window_border_color = yellow
 active_window_border = magenta
 
-## you don't have dunst? maybe another notification daemon would work. doesn't work? comment the line below to disable sending notification attemps
+## you don't have dunst? maybe another notification daemon would work.
+## doesn't work? comment the line below to disable sending notification attemps
 execute_on_song_change = notify-send "Now Playing ♫" "$(mpc current)"

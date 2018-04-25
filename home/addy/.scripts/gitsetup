@@ -54,6 +54,13 @@ if ! location="$(type -p "git")" || [ -z "git" ]; then
 		sudo eopkg -y install git
 
 	fi
+	
+	# check if xbps is installed
+	if which xbps-install > /dev/null; then
+
+		sudo xbps-install -Suy git
+
+	fi
 
 fi
 

@@ -8,6 +8,7 @@
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="clair"
+TERM=xterm
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -58,7 +59,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(
+#  git
+#)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,37 +97,38 @@ source $ZSH/oh-my-zsh.sh
 ## Some useful alias to make your life easier :)
 ##
 
-## ls group directory first
-alias lsf="ls --group-directories-first --color=auto"
-
-## ls with color
+## ls with colour
 alias ls='ls --color=auto'
 
-## View and set wallpaper with feh
-alias feh-view="feh --scale-down --auto-zoom"
-alias feh-set="feh --bg-fill"
-
+## ls group directory first
+alias lsf="ls --group-directories-first --color=auto"
+ 
 ## Refresh font cache
 alias font-refresh="fc-cache -fv"
-
-## download mp3 from youtube, ssst this is illegal actually
-alias ytmp3="youtube-dl --extract-audio --audio-format mp3"
-
+ 
 ## git clone depth 1, who needs to clone full repository if you can clone the top layer only
 alias clone="git clone --depth 1"
-
+ 
 ## merge Xresources, useful for urxvt & rofi theming
 alias merge="xrdb ~/.Xresources"
-
-## search package in the repository
+ 
+## search packages in the repository
 alias search="xbps-query -Rs"
 
-## install package
+## list required dependency of a package in the repository
+alias dependency="xbps-query -Rx"
+ 
+## install packages
 alias install="sudo xbps-install"
-
-## upgrade package
+ 
+## upgrade packages
 alias upgrade="sudo xbps-install -Suv"
+ 
+## remove packages
+alias remove="sudo xbps-remove -R"
 
-## remove package
-alias uninstall="sudo xbps-remove -R"
+## autoremove orphaned packages
+alias autoremove="sudo xbps-remove -Oo"
 
+## cleanup the package cache
+alias clean="sudo rm -rf /var/cache/xbps/*"

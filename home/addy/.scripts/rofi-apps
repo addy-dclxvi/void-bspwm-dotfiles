@@ -8,4 +8,5 @@ rofi -sidebar-mode \
 -location 0 \
 -show drun \
 -columns 3 \
+-hide-scrollbar true \
 -font "Noto Sans 8"

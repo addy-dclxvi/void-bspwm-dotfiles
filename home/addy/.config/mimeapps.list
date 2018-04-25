@@ -1,0 +1,15 @@
+[Added Associations]
+image/png=viewnior.desktop;
+audio/mpeg=audacious.desktop;
+application/x-shellscript=geany.desktop;
+text/plain=geany.desktop;
+text/x-matlab=geany.desktop;
+application/xml=geany.desktop;
+video/x-matroska=mpv.desktop;
+video/mp4=mpv.desktop;
+application/pdf=evince.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+application/pkcs8+pem=gcr-viewer.desktop;
+text/markdown=geany.desktop;
+image/jpeg=viewnior.desktop;
+text/x-scheme=geany.desktop;
