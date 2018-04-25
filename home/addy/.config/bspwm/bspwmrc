@@ -58,7 +58,7 @@ bspc rule -a stalonetray state=floating manage=off
 export PATH="${PATH}:$HOME/.config/bspwm"
 hsetroot -center ~/.wallpaper.jpg
 xsetroot -cursor_name left_ptr
-xrdb .Xresources
+xrdb ~/.Xresources
 xbacklight -set 10
 xset fp+ ~/.fonts/misc
 killall sxhkd lemonbar xsettingsd dunst
