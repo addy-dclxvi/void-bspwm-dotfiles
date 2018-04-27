@@ -437,8 +437,6 @@ ii talloc-2.1.12_1                         Hierarchical pool based memory alloca
 ii tar-1.30_1                              The GNU tape archiver with remote magnetic tape support
 ii telepathy-glib-0.24.1_1                 Library for GLib-based Telepathy components
 ii thin-provisioning-tools-0.7.6_1         Tools for manipulating the metadata of dm-thin device-mapper targets
-ii thunar-archive-plugin-0.3.1_1           Create and extract archives in Thunar
-ii thunar-volman-0.8.1_2                   Thunar Volume Manager
 ii tiff-4.0.9_1                            Library and tools for reading and writing TIFF data files
 ii traceroute-2.1.0_2                      Traces the route taken by packets over an IPv4/IPv6 network
 ii transmission-2.93_1                     A fast, easy, and free BitTorrent client
@@ -456,7 +454,6 @@ ii volume_key-0.3.9_4                      Library for manipulating storage volu
 ii wayland-1.15.0_1                        Wayland protocol compositor
 ii webkit2gtk-2.20.0_1                     GTK+3 port of the WebKit2 browser engine
 ii weechat-2.1_1                           Fast, light and extensible IRC client
-ii wget-1.19.4_3                           The GNU wget download utility
 ii which-2.21_3                            Displays where a particular program in your path is located
 ii wifi-firmware-1.3_1                     WiFi firmware meta-package
 ii wpa_supplicant-2.6_8                    WPA/WPA2/IEEE 802.1X Supplicant
