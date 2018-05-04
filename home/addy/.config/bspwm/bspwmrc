@@ -61,7 +61,8 @@ xsetroot -cursor_name left_ptr
 xrdb ~/.Xresources
 xbacklight -set 10
 xset fp+ ~/.fonts/misc
-killall sxhkd lemonbar xsettingsd dunst
+killall xcape sxhkd lemonbar xsettingsd dunst
+xcape -e 'Super_L=Super_L|D' &
 sxhkd &
 panel &
 xsettingsd &
