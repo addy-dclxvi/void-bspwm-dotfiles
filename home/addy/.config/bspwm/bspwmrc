@@ -1,13 +1,27 @@
 #! /bin/sh
 
+## get colors from xrdb
+xrdb ~/.Xresources
+FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+
 ## bspwm configurations
 bspc monitor -d 'I' 'II' 'III' 'IV' 'V' 'VI'
 bspc config focus_follows_pointer true
-bspc config border_width        4
-bspc config window_gap         	16
-bspc config focused_border_color "#bd93f9" 
-bspc config normal_border_color "#44475a"
-bspc config presel_feedback_color "#50Fa7b"
+bspc config border_width 4
+bspc config window_gap 16
+bspc config focused_border_color "$BLUE" 
+bspc config normal_border_color "$BLACK"
+bspc config active_border_color "$MAGENTA"
+bspc config presel_feedback_color "$GREEN"
 bspc config borderless_monocle true
 bspc config single_monocle false
 
@@ -55,15 +69,26 @@ bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
 ## autostart
+export PATH="${PATH}:$HOME/.scripts"
 export PATH="${PATH}:$HOME/.config/bspwm"
 hsetroot -center ~/.wallpaper.jpg
 xsetroot -cursor_name left_ptr
-xrdb ~/.Xresources
 xbacklight -set 10
 xset fp+ ~/.fonts/misc
-killall xcape sxhkd lemonbar xsettingsd dunst
+killall -9 xcape sxhkd lemonbar xsettingsd dunst
 xcape -e 'Super_L=Super_L|D' &
 sxhkd &
 panel &
 xsettingsd &
-dunst &
+dunst \
+-lb "$BACKGROUND" \
+-lf "$FOREGROUND" \
+-lfr "$GREEN" \
+-nb "$BACKGROUND" \
+-nf "$FOREGROUND" \
+-nfr "$BLUE" \
+-cb "$BACKGROUND" \
+-cf "$FOREGROUND" \
+-cfr "$RED" &
+sleep 1
+notify-send "Notification" "Bspwmrc Reloaded" &

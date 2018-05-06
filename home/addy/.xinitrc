@@ -16,9 +16,6 @@ then
 	eval "$(dbus-launch --sh-syntax --exit-with-session)"
 fi
 
-# Make ~/.scripts folder executable
-export PATH="${PATH}:$HOME/.scripts"
-
 # Export locale variables
 # I use autox for Display Manager replacement
 # It has a bug that make locale configurations are not loaded on login
@@ -28,7 +25,6 @@ export PATH="${PATH}:$HOME/.scripts"
 export LANG=en_US.utf8
 export LC_COLLATE=C
 export LC_ADDRESS=en_US.utf8
-export LC_COLLATE=en_US.utf8
 export LC_CTYPE=en_US.utf8
 export LC_IDENTIFICATION=en_US.utf8
 export LC_MEASUREMENT=id_ID.utf8
@@ -40,6 +36,6 @@ export LC_PAPER=en_US.utf8
 export LC_TELEPHONE=id_ID.utf8
 export LC_TIME=en_US.utf8
 
-# Autostart
-# I put most of autostart in bspwmrc
+# Launch Bspwm
+# I put every autostart in bspwmrc
 exec bspwm

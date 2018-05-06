@@ -1,3 +1,4 @@
 #!/bin/bash
+
 scrot 'Cheese_%y.%m.%d_%H.%M.%S.png' \
 -e 'mv $f ~/Pictures ; viewnior ~/Pictures/$f'

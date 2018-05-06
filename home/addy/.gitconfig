@@ -1,0 +1,9 @@
+[user]
+	name = addy-dclxvi
+	email = addy4rock@gmail.com
+[credential]
+	helper = cache --timeout=18000
+[push]
+	default = simple
+[core]
+	editor = vim

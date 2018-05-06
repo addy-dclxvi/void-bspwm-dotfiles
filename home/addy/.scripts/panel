@@ -1,5 +1,20 @@
 #! /bin/sh
+
 # based on default example from bspwm github
+# some parts are modified to make them look like what i want
+# cheers! addy
+
+# get colors from xrdb
+FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
 
 PANEL_FIFO=/tmp/panel-fifo
 PANEL_HEIGHT=24
@@ -9,30 +24,30 @@ PANEL_VERTICAL_OFFSET=8
 PANEL_WM_NAME=bspwm_panel
 PANEL_FONT="-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1"
 
-COLOR_DEFAULT_FG="#f8f8f2"
-COLOR_DEFAULT_BG="#222d32"
-COLOR_MONITOR_FG="#f8f8f2"
-COLOR_MONITOR_BG="#222d32"
-COLOR_FOCUSED_MONITOR_FG="#f8f8f2"
-COLOR_FOCUSED_MONITOR_BG="#8be9fd"
-COLOR_FREE_FG="#666664"
-COLOR_FREE_BG="#222d32"
-COLOR_FOCUSED_FREE_FG="#f8f8f2"
-COLOR_FOCUSED_FREE_BG="#bd93f9"
-COLOR_OCCUPIED_FG="#f8f8f2"
-COLOR_OCCUPIED_BG="#222d32"
-COLOR_FOCUSED_OCCUPIED_FG="#f8f8f2"
-COLOR_FOCUSED_OCCUPIED_BG="#bd93f9"
-COLOR_URGENT_FG="#f8f8f2"
-COLOR_URGENT_BG="#ffb86c"
-COLOR_FOCUSED_URGENT_FG="#b48ead"
-COLOR_FOCUSED_URGENT_BG="#f1fa8c"
-COLOR_STATE_FG="#222d32"
-COLOR_STATE_BG="#222d32"
-COLOR_TITLE_FG="#f8f8f2"
-COLOR_TITLE_BG="#222d32"
-COLOR_SYS_FG="#f8f8f2"
-COLOR_SYS_BG="#bd93f9"
+COLOR_DEFAULT_FG="$FOREGROUND"
+COLOR_DEFAULT_BG="$BACKGROUND"
+COLOR_MONITOR_FG="$FOREGROUND"
+COLOR_MONITOR_BG="$BACKGROUND"
+COLOR_FOCUSED_MONITOR_FG="$FOREGROUND"
+COLOR_FOCUSED_MONITOR_BG="$CYAN"
+COLOR_FREE_FG="$BLACK"
+COLOR_FREE_BG="$BACKGROUND"
+COLOR_FOCUSED_FREE_FG="$FOREGROUND"
+COLOR_FOCUSED_FREE_BG="$BLUE"
+COLOR_OCCUPIED_FG="$FOREGROUND"
+COLOR_OCCUPIED_BG="$BACKGROUND"
+COLOR_FOCUSED_OCCUPIED_FG="$FOREGROUND"
+COLOR_FOCUSED_OCCUPIED_BG="$BLUE"
+COLOR_URGENT_FG="$FOREGROUND"
+COLOR_URGENT_BG="$YELLOW"
+COLOR_FOCUSED_URGENT_FG="$FOREGROUND"
+COLOR_FOCUSED_URGENT_BG="$YELLOW"
+COLOR_STATE_FG="$BACKGROUND"
+COLOR_STATE_BG="$BACKGROUND"
+COLOR_TITLE_FG="$FOREGROUND"
+COLOR_TITLE_BG="$BACKGROUND"
+COLOR_SYS_FG="$FOREGROUND"
+COLOR_SYS_BG="$RED"
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 

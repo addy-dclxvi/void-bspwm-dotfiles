@@ -1,44 +1,9 @@
 ! ------------------------------------------------------------------------------
-! Dracula Color Scheme
+! Import Colour
 ! ------------------------------------------------------------------------------
 
-! special
-*.foreground:   #f8f8f2
-*.background:   #222d32
-*.cursorColor:  #bd93f9
-
-! black
-*.color0:       #44475a
-*.color8:       #4d4d4d
-
-! red
-*.color1:       #ff5555
-*.color9:       #ff6e67
-
-! green
-*.color2:       #50Fa7b
-*.color10:      #5af78e
-
-! yellow
-*.color3:       #f1fa8c
-*.color11:      #f4f99d
-
-! blue
-*.color4:       #bd93f9
-*.color12:      #caa9fa
-
-! magenta
-*.color5:       #ff79c6
-*.color13:      #ff92d0
-
-! cyan
-*.color6:       #8be9fd
-*.color14:      #9aedfe
-
-! white
-*.color7:       #bfbfbf
-*.color15:      #e6e6e6
-
+! available colour is in ~/.colors/ folder
+#include ".colors/dracula"
 
 ! ------------------------------------------------------------------------------
 ! Fonts
@@ -68,9 +33,7 @@ URxvt*iso14755:			false
 URxvt*urgentOnBell:		true
 
 ! appearance
-!URxvt*depth:			32
-!URxvt*background:		[95]#222d32
-URxvt*depth:			32
+URxvt*depth:			24
 URxvt.highlightColor:	#ff79c6
 URxvt*scrollBar:		false
 URxvt*scrollBar_right:	false
@@ -103,16 +66,6 @@ URxvt.keysym.Control-Up:	\033[1;5A
 URxvt.keysym.Control-Down:	\033[1;5B
 URxvt.keysym.Control-Right:	\033[1;5C
 URxvt.keysym.Control-Left:	\033[1;5D
-
-! ------------------------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------------------------
-
-rofi.color-enabled: true
-rofi.color-window: #222d32, #222d32, #222d32
-rofi.color-normal: #222d32, #f8f8f2, #222d32, #222d32, #bd93f9
-rofi.color-active: #222d32, #ff79c6, #222d32, #222d32, #8be9fd
-rofi.color-urgent: #222d32, #f1fa8c, #222d32, #222d32, #f1fa8c       
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration

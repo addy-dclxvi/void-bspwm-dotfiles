@@ -2,9 +2,9 @@
 super + Return
 	urxvt
 
-## rofi launcher
+## actual rofi launcher keybind before overiden by xcape
 super + d
-	rofi-apps
+	rofia
 
 ## launch common apps
 super + shift + {f,w,g}

@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 ## download mp3 from youtube, ssst this is illegal actually
 youtube-dl $1\

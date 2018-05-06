@@ -6,7 +6,7 @@
   <property name="last-window-width" type="int" value="651"/>
   <property name="last-window-height" type="int" value="704"/>
   <property name="last-window-maximized" type="bool" value="false"/>
-  <property name="last-separator-position" type="int" value="141"/>
+  <property name="last-separator-position" type="int" value="125"/>
   <property name="last-show-hidden" type="bool" value="true"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="network://"/>
@@ -19,9 +19,10 @@
     <value type="string" value="tmp"/>
     <value type="string" value="9e67e9f0-0cc4-495c-8e64-68cab144441b"/>
     <value type="string" value="mtp"/>
+    <value type="string" value="8ecbdf3b-374d-4cc0-8a4b-1d9657c8a912"/>
   </property>
   <property name="misc-text-beside-icons" type="bool" value="false"/>
   <property name="shortcuts-icon-size" type="string" value="THUNAR_ICON_SIZE_SMALLEST"/>
-  <property name="misc-volume-management" type="bool" value="true"/>
+  <property name="misc-volume-management" type="bool" value="false"/>
   <property name="last-statusbar-visible" type="bool" value="false"/>
 </channel>
