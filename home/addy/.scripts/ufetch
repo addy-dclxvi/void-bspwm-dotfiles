@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# ufetch-void - tiny system info for void
-
 ## INFO
 
-# user is already defined
 user="${USER}@$(hostname)"
 os='Void Linux'
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
 packages="$(xbps-query -l | wc -l)"
 shell="$(basename ${SHELL})"
+pidof systemd && init="systemd" || init="Not systemd"
 
 if [ -z "${WM}" ]; then
 	if [ "${XDG_CURRENT_DESKTOP}" ]; then
@@ -27,8 +25,6 @@ else
 	envtype='WM'
 fi
 
-# detect systemd
-pidof systemd && init="systemd" || init="Not systemd"
 
 ## DEFINE COLORS
 

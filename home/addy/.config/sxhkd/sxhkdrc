@@ -18,6 +18,10 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
 
+## show now-playing
+super + m
+	notify-send "Now Playing ♫" "$(mpc current)"
+
 ## make sxhkd reload its configuration files
 super + s
 	pkill -USR1 -x sxhkd
