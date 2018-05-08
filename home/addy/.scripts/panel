@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 # based on default example from bspwm github
 # some parts are modified to make them look like what i want
@@ -61,7 +61,7 @@ clock() {
     done
 }
 
-killall -9 lemonbar xtitle
+killall -9 lemonbar xtitle xdo
 bspc subscribe report > "$PANEL_FIFO" &
 clock > "$PANEL_FIFO" &
 xtitle -t 100 -sf 'T%s\n' > "$PANEL_FIFO" &
@@ -184,6 +184,7 @@ panel_bar < "$PANEL_FIFO" | lemonbar -a 12 \
 -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" \
 -f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" -n "$PANEL_WM_NAME" | sh &
 
+sleep 2
 wid=$(xdo id -a "$PANEL_WM_NAME")
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
 
