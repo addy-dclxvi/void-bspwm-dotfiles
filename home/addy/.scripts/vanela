@@ -1,29 +1,51 @@
 #!/bin/bash
 
-# based on default example from bspwm github
-# some parts are modified to make them look like what i want
-# cheers! addy
+# Just a simple Lemonbar script
+# Only clickable workspaces, window title, and clock
+# Spamming command every second using shell to generate statusline is not really efficient
+# So I only put those three items
+# If I need other status informations
+# I'd rather to call them using Dunst
 
-# get colors from xrdb
-FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
-BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
-BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
-RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
-GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
-YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
-BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
-MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
-CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
-WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+# Workspace indicator is generated using bspc subscribe
+# Which only update if there is an reaction on bspwm
+# Window title is generated using xtitle
+# Which also has subscribe event ability
+# Clock is generated using looped date command
+# Only update every thirty seconds
 
-PANEL_FIFO=/tmp/panel-fifo
+# Based on default example from Bspwm GitHub repository
+# Some parts are modified to make them look like what i want
+# Cheers! Addy
+
+getcolors () {
+	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
+	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
+	BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
+	RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
+	GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
+	YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
+	BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
+	MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
+	CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
+	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+}
+
+# Only use the function above if the cache of paintee couldn't be found
+if [ -e ~/.cache/paintee ]; then
+	. ~/.cache/paintee
+	else
+	getcolors
+fi
+
+# Panel configurations
 PANEL_HEIGHT=24
-PANEL_WIDTH=1066
-PANEL_HORIZONTAL_OFFSET=150
+PANEL_WIDTH=866
+PANEL_HORIZONTAL_OFFSET=250
 PANEL_VERTICAL_OFFSET=8
-PANEL_WM_NAME=bspwm_panel
 PANEL_FONT="-lucy-tewi-medium-r-normal-*-11-90-100-100-c-60-iso10646-1"
-
+PANEL_FIFO=/tmp/panel-fifo
+PANEL_WM_NAME=bspwm_panel
 COLOR_DEFAULT_FG="$FOREGROUND"
 COLOR_DEFAULT_BG="$BACKGROUND"
 COLOR_MONITOR_FG="$FOREGROUND"
@@ -49,24 +71,26 @@ COLOR_TITLE_BG="$BACKGROUND"
 COLOR_SYS_FG="$FOREGROUND"
 COLOR_SYS_BG="$RED"
 
-trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
-
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
 clock() {
     while true; do
         date +"S%a %-d %b %H:%M"
-        sleep 1
+        sleep 30
     done
 }
 
-killall -9 lemonbar xtitle xdo
-bspc subscribe report > "$PANEL_FIFO" &
+# Just to make sure there is no double process
+killall -9 lemonbar xtitle xdo clock
+
+# Echo every modules to PANEL_FIFO
 clock > "$PANEL_FIFO" &
-xtitle -t 100 -sf 'T%s\n' > "$PANEL_FIFO" &
+xtitle -t 70 -sf 'T%s\n' > "$PANEL_FIFO" &
+bspc subscribe report > "$PANEL_FIFO" &
 num_mon=$(bspc query -M | wc -l)
 
+# Then read those value
 panel_bar() {
 while read -r line ; do
 	case $line in
@@ -180,12 +204,20 @@ while read -r line ; do
 done
 }
 
+# Get all the results of the modules above then pipe them to Lemonbar
 panel_bar < "$PANEL_FIFO" | lemonbar -a 12 \
 -g "$PANEL_WIDTH"x"$PANEL_HEIGHT"+"$PANEL_HORIZONTAL_OFFSET"+"$PANEL_VERTICAL_OFFSET" \
--f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" -n "$PANEL_WM_NAME" | sh &
+-f "$PANEL_FONT" -F "$COLOR_DEFAULT_FG" -B "$COLOR_DEFAULT_BG" -n "$PANEL_WM_NAME" | bash &
 
-sleep 2
+sleep 0.5
+# Trigger the PANEL_FIFO to make it instantly refreshed after bspwmrc reloaded 
+echo "dummy" > "$PANEL_FIFO"
+
+sleep 0.5
+# Rule the panel to make it hiding below fullscreen window
+# I add 'sleep 0.5' to avoid xdo executed before the Lemonbar fully loaded
 wid=$(xdo id -a "$PANEL_WM_NAME")
 xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
 
+# Don't close this process
 wait

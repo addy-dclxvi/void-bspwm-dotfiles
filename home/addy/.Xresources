@@ -1,11 +1,4 @@
 ! ------------------------------------------------------------------------------
-! Import Colour
-! ------------------------------------------------------------------------------
-
-! available colour is in ~/.colors/ folder
-#include ".colors/dracula"
-
-! ------------------------------------------------------------------------------
 ! Fonts
 ! ------------------------------------------------------------------------------
 
@@ -34,7 +27,6 @@ URxvt*urgentOnBell:		true
 
 ! appearance
 URxvt*depth:			24
-URxvt.highlightColor:	#ff79c6
 URxvt*scrollBar:		false
 URxvt*scrollBar_right:	false
 URxvt*internalBorder:	24

@@ -1,40 +1,34 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+## Zsh configurations
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/addy/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# Choose oh-my-zsh theme
 ZSH_THEME="minia"
+
+# Type of terminal
 TERM=xterm
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
+# Complete path of oh-my-zsh script
+source $ZSH/oh-my-zsh.sh
+
+# Disable auto update
 DISABLE_AUTO_UPDATE="true"
 
-# Uncomment the following line to enable command auto-correction.
+# Eanble auto correction
 ENABLE_CORRECTION="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
+# Disable marking untracked files
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Enabled Plugin
 plugins=(
   git
 )
 
-source $ZSH/oh-my-zsh.sh
-
 ## Some useful alias to make your life easier :)
-##
 
-## ls with colour and directory first
+# List with colour and directory first
 alias ls='ls --group-directories-first --color=auto'
  
 ## Refresh font cache
@@ -42,9 +36,6 @@ alias font-refresh="fc-cache -fv"
  
 ## git clone depth 1, who needs to clone full repository if you can clone the top layer only
 alias clone="git clone --depth 1"
- 
-## merge Xresources, useful for urxvt & rofi theming
-alias merge="xrdb ~/.Xresources"
  
 ## search packages in the repository
 alias search="xbps-query -Rs"

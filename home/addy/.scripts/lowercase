@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Convert every words in a file to lowercase
+# Useful to make every colour hex code converted to lowercase
+# Colour code picked by colourpicker is uppercase by default
+# Cheers! Addy
+
+if [ -z "$1" ]; then
+	echo -e "\e[31mNeed a file after \e[0mlowercase \e[31mcommand\e[0m"
+	else
+
+	if [ -e "$1" ]; then
+		sed -e 's/\(.*\)/\L\1/' $1 > $1-lowercase
+		sed -e 's/cursorcolor/cursorColor/g' $1-lowercase > $1-lowercase2
+		mv $1 $1-old
+		mv $1-lowercase2 $1
+		rm $1-lowercase
+		echo -e "\e[32mDone \e[0m"
+		echo -e "\e[32mOriginal file stored as \e[0m$1-old"
+		else
+		echo -e "\e[33mFile not found \e[0m"
+	fi
+fi

@@ -3,19 +3,21 @@
 mixer-element=Master
 
 [audacious]
+generic_title_format=${?artist:${artist} - }${title}
 record=FALSE
 
 [audgui]
-info_win=405,184,548,391
+info_win=729,274,548,391
 
 [gtkui]
 column_widths=10,275,175,10,175,175,10,100,29,10,275,275,275,10,275
 infoarea_show_vis=FALSE
 infoarea_visible=FALSE
 menu_visible=FALSE
-player_height=400
-player_x=295
-player_y=140
+player_height=455
+player_width=836
+player_x=171
+player_y=108
 statusbar_visible=FALSE
 
 [gtkui-layout]

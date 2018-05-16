@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# A simple script to do screenrecord using ffmpeg
+# Install ffmpeg first if You didn't have
+# I usually launch this script using rofi
+# Cheers! Addy
+
 ffmpeg -f x11grab \
 -s 1366x768 \
 -an -i :0.0 \

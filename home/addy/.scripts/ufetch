@@ -1,7 +1,12 @@
 #!/bin/bash
 
-## INFO
+# Ufetch 
+# A simple screenfetch alternative
+# Original code from https://github.com/jschx/ufetch
+# I just slightly modified this
+# Cheers! Addy
 
+## Get system info
 user="${USER}@$(hostname)"
 os='Void Linux'
 kernel="$(uname -sr)"
@@ -26,8 +31,7 @@ else
 fi
 
 
-## DEFINE COLORS
-
+## Define Colours
 # probably don't change these
 bold="$(tput bold)"
 black="$(tput setaf 0)"
@@ -47,8 +51,7 @@ ic="${reset}"					# info
 c0="${reset}${bold}${green}"	# first color
 c1="${reset}${green}"			# second color
 
-## OUTPUT
-
+## Finally, print the output
 cat <<EOF
 
 ${c0}       ___     

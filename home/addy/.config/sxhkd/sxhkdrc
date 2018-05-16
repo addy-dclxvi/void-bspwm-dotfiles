@@ -1,95 +1,99 @@
-## launch terminal
+## Launch terminal
 super + Return
 	urxvt
 
-## actual rofi launcher keybind before overiden by xcape
+## Drawing terminal
+super + shift + Return
+	urdraw
+
+## Launch Rofi start menu
 super + d
 	rofia
 
-## launch common apps
+## Launch common apps
 super + shift + {f,w,g}
 	{thunar,firefox,geany}
 	
-## volume control
+## Take a screenshot
+Print
+	screeny
+	
+## Volume control
 XF86Audio{RaiseVolume,LowerVolume,Mute}
 	amixer {-q set Master 5%+,-q set Master 5%-,set Master toggle}
 	
-## music control
+## Music control
 XF86Audio{Next,Prev,Play,Stop}
 	mpc {next,prev,toggle,stop}
 
-## show now-playing
+## Show now-playing
 super + m
 	notify-send "Now Playing ♫" "$(mpc current)"
 
-## make sxhkd reload its configuration files
+## Make sxhkd reload its configuration files
 super + s
 	pkill -USR1 -x sxhkd
-		
-## take a screenshot
-Print
-	screeny
 
-## quit bspwm normally
+## Quit bspwm normally
 super + control + Escape
-	pkill panel; bspc quit
+	killall vanela; bspc quit
 
-## reload bspwm config
+## Reload bspwm config
 super + shift + BackSpace
-	pkill panel; bspwmrc
+	killall vanela; bspwmrc
 
-## close or kill app
+## Close or kill app
 super + {_,shift + }c
 	bspc node {-c,-k}
 
-## close app (common way)
+## Close app (common way)
 alt + F4
 	bspc node -c
 
-## fullscreen
+## Fullscreen / Monocle
 super + f
 	bspc desktop -l next
 	
-## spit horizontal, split vertical, or cancel
+## Split horizontal, split vertical, or cancel
 super + {h,v,r}
 	bspc node -p {east,south,cancel}
 
-## toggle pseudo-tiled
-super + {p,t}
-    bspc node -t {pseudo_tiled,tiled}
-
-## toggle beetwen floating & tiled
+## Toggle beetwen floating & tiled
 super + space
     bspc node -t "~"{floating,tiled}
 
-## send the window in the given direction
+## Pseudo Tiled & tiled mode
+super + {p,t}
+    bspc node -t {pseudo_tiled,tiled}
+
+## Send the window to another edge of the screen
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
-## focus the next node in the current desktop
+## Change focus to next window, including floating window
 alt + {_,shift + }Tab
 	bspc node -f {next.local,prev.local}
 
-## focus the next/previous desktop in the current monitor
+## Switch workspace
 ctrl + alt + {Left,Right}
 	bspc desktop -f {prev.local,next.local}
 
-## focus the last node/desktop
+## Switch to last opened workspace
 super + {Tab,grave}
 	bspc {node,desktop} -f last
 
-## focus or send to the given desktop
+## Send focused window to another workspace
 super + {_,shift + }{1-6}
 	bspc {desktop -f,node -d} '^{1-6}'
 
-## expanding windows
-super + alt + {Left,Right,Up,Down}
+## Expanding windows
+super + control + {Left,Right,Up,Down}
 	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
 	
-## shrinking windows
-super + control + {Left,Right,Up,Down}
+## Shrinking windows
+super + alt + {Left,Right,Up,Down}
 	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
 	
-## move floating windows
+## Move floating windows
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}

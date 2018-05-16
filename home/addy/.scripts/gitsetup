@@ -1,43 +1,42 @@
 #!/bin/bash
 
-# A helper script to setup Git
-# Originally written by Monsieur Erik Dubois
+# A helper script to setup Git, originally written by Erik Dubois
+# Change the email & username if You want to use this
+# Cheers! Addy
 
-# installing git if not installed for specific distro's
-
+# Installing git if not installed for specific distro
 if ! location="$(type -p "git")" || [ -z "git" ]; then
 
-	echo "Installing Git"
+	echo -e "\e[33mInstalling Git\e[0m"
 
-  	sudo apt install git -y
-	# check if apt-git is installed
+	# Check if apt-get is installed
 	if which apt-get > /dev/null; then
 		sudo apt-get install -y git
 	fi
 
-	# check if pacman is installed
+	# Check if pacman is installed
 	if which pacman > /dev/null; then
 		sudo pacman -S --noconfirm git
 	fi
 
-	# check if eopkg is installed
+	# Check if eopkg is installed
 	if which eopkg > /dev/null; then
 		sudo eopkg -y install git
 	fi
 	
-	# check if xbps is installed
+	# Check if xbps is installed
 	if which xbps-install > /dev/null; then
 		sudo xbps-install -Suy git
 	fi
 fi
 
-#setting up git
+# Setting up git
 git init
 git config --global user.name "addy-dclxvi"
 git config --global user.email "addy4rock@gmail.com"
-sudo git config --system core.editor nano
+sudo git config --system core.editor vim
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=18000'
 git config --global push.default simple
 
-echo "Ok"
+echo -e "\e[35mDone\e[0m"
