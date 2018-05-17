@@ -1,0 +1,17 @@
+[general]
+bar_width = 2
+bar_spacing = 1
+
+[input]
+method = fifo
+source = /tmp/mpd.fifo
+
+[output]
+channels = stereo
+
+[color]
+foreground = red
+
+[smoothing]
+integral = 80
+gravity = 40

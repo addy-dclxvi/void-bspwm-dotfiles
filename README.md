@@ -1,11 +1,19 @@
 ## Introduction
 A repository contains personal backup of my Void Linux setup.
 
+## Preview
+Click to play the short video <br /> 
+[![workflow](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/liontin.png)](https://www.youtube.com/watch?v=ReLOM4UezHQ "workflow") <br />
+Every login (or Bspwm reload), random colorscheme from *~/.colors/* folder will be loaded.
+Bspwm, Lemonbar, URxvt, Rofi, and Dunst will use the same colourscheme from that random picked colouscheme.
+If there is URxvt window opened on Bspwm reload, the URxvt colourscheme will be reloaded on the fly.
+The wallpaper is also randomly picked from *~/.wallpaper/* folder.
+
 ## Colors
 All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at least I come with original colorscheme. <br />
 ### Cellia
 ![cellia](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/cellia.png) <br />
-**Now Playing :** Dragonforce - The Spirit Will Go On <br />
+**Now Playing :** Dragonforce - My Spirit Will Go On <br />
 ### Liontin
 ![liontin](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/liontin.png) <br />
 **Now Playing :** Avenged Sevenfold - The Beast and The Harlot <br />
@@ -60,10 +68,12 @@ All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at 
 
 ## Blueprint
 A small note I wrote when I built this setup. So, if the next time I install it again, I would know what to do.
-Sorry, I can't write a proper guide.
-- Don't underestimate Void installation difficulty. Void post installation has more manual step than Arch.
+Sorry, I can't write a proper guide, I don't even recommend You to follow this note.
+And don't use any file outside the home folder unless You know what are You doing.
+- Don't underestimate Void installation difficulty.
 - Install Void Linux iso like usual (pick the DE-less iso).
 - Remove the installation disk, reboot, then login.
+- `sudo visudo`. Make *wheel* group can perform sudo without asking password. Example in */etc/sudoers*.
 - Enable wireless `sudo ip link set up wlp2s0` (wlp2s0 is my network interface).
 - Connect to wifi using *wpa_supplicant*. The configuration is in */etc/wpa_supplicant* folder.
 And the service script is in */etc/sv/wpa_supplicant/run*. Example files are included in this repo.
@@ -81,7 +91,7 @@ In case of needed, PSK can be generated using
 - Shell should be changed to zsh automatically. If not, do `sudo chsh addy`
 - Clone this repository `git clone --depth=1 https://github.com/addy-dclxvi/void-bspwm-dotfiles.git`
 - Deploy the dotfiles recursively `cp -a void-bspwm-dotfiles/home/addy/. ~`
-- `sudo xbps-install Adapta ConsoleKit2 Thunar alsa-utils android-tools audacious audacious-plugins autox breeze-snow-cursor-theme bspwm dunst evince ffmpeg file-roller firefox geany gtk-engine-murrine gvfs gvfs-mtp hsetroot htop intel-ucode lemonbar lxappearance mpc mpd mpv ncmpcpp neofetch noto-fonts-ttf ntfs-3g papirus-icon-theme rofi rxvt-unicode scrot slop sxhkd tumbler viewnior vim weechat xbacklight xdo xf86-input-synaptics xf86-video-intel xorg-fonts xorg-minimal xprop xrdb xsel xset xsetroot xsettingsd xtitle youtube-dl`
+- `sudo xbps-install Adapta ConsoleKit2 Thunar alsa-utils android-tools audacious audacious-plugins autox breeze-snow-cursor-theme bspwm cava dunst evince ffmpeg file-roller firefox geany gtk-engine-murrine gvfs gvfs-mtp hsetroot htop intel-ucode lemonbar lxappearance mpc mpd mpv ncmpcpp neofetch noto-fonts-ttf ntfs-3g papirus-icon-theme rofi rxvt-unicode scrot slop sxhkd tumbler viewnior vim weechat xbacklight xdo xf86-input-synaptics xf86-video-intel xorg-fonts xorg-minimal xprop xrdb xsel xset xsetroot xsettingsd xtitle youtube-dl`
 - In case of lazy, skip the step above. 
 Do this instead `chmod +x void-bspwm-dotfiles/install-packages.sh` then `sh void-bspwm-dotfiles/install-packages.sh`
 - Add `HARDWARECLOCK=localtime` to */etc/rc.conf*, because my hardware clock is my localtime instead of UTC.
@@ -99,7 +109,7 @@ Vendor ID and Product ID can be found using `mtp-detect`
 - Make Thunar can mount partitions without asking root permission to make my life easier. 
 Can be achieved by editing */usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy* file.
 - Add X.org configuration to */etc/X11/xorg.conf.d/*.
-*70-synaptics.conf* is used to enable side scrolling both vertical & horizontal, and disable tap to click & two finger scrolling.
+The *70-synaptics.conf* file is used to enable side scrolling both vertical & horizontal, and disable tap to click & two finger scrolling.
 *99-killX.conf* is used to enable emergency button **Control + Alt + Backspace** to restart X, just in case of freeze on X.
 - Remove unused service in */var/service/*. Like TTY3, TTY4, TTY5, TTY6, and SSHD. They're just symlinks, can be restored easily when needed.
 - Enable *autox*, *cgmanager*, *consolekit*, and *dbus* service.
@@ -109,17 +119,26 @@ Can be achieved by editing */usr/share/polkit-1/actions/org.freedesktop.UDisks2.
 
 ## Cherry Pick
 If You only need the Bspwm configuration without fully replicate this setup, You need:
-- *~/.config/bspwm/*
-- *~/.config/sxhkd/*
-- *~/.config/dunst/*
-- *~/.scripts/*
+- *~/.config/bspwm/bspwmrc*
+- *~/.config/sxhkd/sxhkdrc*
+- *~/.config/dunst/dunstrc*
+- *~/.scripts/paintee*
+- *~/.scripts/rofia*
+- *~/.scripts/urdraw*
+- *~/.scripts/vanela*
 - *~/.urxvt/*
 - *~/.fonts/*
 - *~/.colors/*
+- *~/.wallpaper/*
 - *~/.Xresources*
 - *~/.xsettingsd*
 - And these packages `bspwm dunst hsetroot lemonbar noto-fonts-ttf rofi rxvt-unicode slop sxhkd xdo xrdb xsel xset xsetroot xsettingsd xtitle` <br />
-**Note :** Different distro may have different package names. And if You're on Debian, build *xtitle* from [source](https://github.com/baskerville/xtitle).
+
+Notes
+- Inspect the scripts before use. Every scripts are well commented.
+- Different distro may have different package names.
+- if You're on Debian, build *xtitle* from [source](https://github.com/baskerville/xtitle).
+- It works for me.
 
 ## Cheatsheet
 - **Super + Enter** Launch terminal
@@ -144,5 +163,3 @@ If You only need the Bspwm configuration without fully replicate this setup, You
 - **Super + Alt + Arrow** Shrink window size
 - **Alt + Shift + Arrow** Move floating window
 
-## Note
-Probably couldn't work out of the box
