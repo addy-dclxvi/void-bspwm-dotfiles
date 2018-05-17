@@ -2,7 +2,7 @@
 A repository contains personal backup of my Void Linux setup.
 
 ## Preview
-###Click to play the short video
+### Click to play the short video
 [![workflow](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/workflow.png)](https://www.youtube.com/watch?v=ReLOM4UezHQ "workflow") <br />
 Every login (or Bspwm reload), random colorscheme from *~/.colors/* folder will be loaded.
 Bspwm, Lemonbar, URxvt, Rofi, and Dunst will use the same colourscheme from that random picked colouscheme.
