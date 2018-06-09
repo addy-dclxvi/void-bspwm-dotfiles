@@ -18,7 +18,9 @@ getcolors () {
 	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
 }
 xrdb ~/.Xresources
-xrdb -merge $(shuf -n1 -e ~/.colors/*)
+COLOR=$(shuf -n1 -e ~/.colors/*)
+SHORTCOLOR=$(echo $COLOR | sed "s@.*/@@")
+xrdb -merge $COLOR
 paintee
 # Only use the function above if the cache of paintee couldn't be found
 if [ -e ~/.cache/paintee ]; then
@@ -61,19 +63,16 @@ declare -a office=(Geany Gucharmap Evince \
 libreoffice-writer libreoffice-calc libreoffice-impress \
 libreoffice-startcenter libreoffice Soffice *:libreofficedev *:soffice)
 for i in ${office[@]}; do
-   bspc rule -a $i desktop='^4' follow=on focus=on
-done
+   bspc rule -a $i desktop='^4' follow=on focus=on; done
 # 5 > media
 declare -a media=(Audacity mpv Gimp Gimp-2.8)
 for i in ${media[@]}; do
-   bspc rule -a $i desktop='^5' follow=on focus=on
-done
+   bspc rule -a $i desktop='^5' follow=on focus=on; done
 # 6 > settings
 declare -a settings=(Lxappearance Lxtask Lxrandr Arandr \
 System-config-printer.py Pavucontrol Exo-helper-1)
 for i in ${settings[@]}; do
-   bspc rule -a $i desktop='^6' state=floating follow=on focus=on
-done
+   bspc rule -a $i desktop='^6' state=floating follow=on focus=on; done
 bspc rule -a GParted desktop='^6' follow=on focus=on
 # special rules
 bspc rule -a Audacious state=floating follow=on focus=on
@@ -83,7 +82,6 @@ bspc rule -a Conky state=floating manage=off
 bspc rule -a stalonetray state=floating manage=off
 
 ## Autostart
-hsetroot -fill $(shuf -n1 -e ~/.wallpaper/*) -tint '#9ccfe6'
 xsetroot -cursor_name left_ptr
 xbacklight -set 10
 xset fp+ ~/.fonts/misc
@@ -91,9 +89,14 @@ killall -9 sxhkd vanela xsettingsd dunst
 sxhkd &
 vanela &
 xsettingsd &
+WALLPAPER=$(shuf -n1 -e ~/.wallpaper/*)
+SHORTWALLPAPER=$(echo $WALLPAPER | sed "s@.*/@@" | sed "s/\..*$//")
+ls ~/.wallpaper | sort -R | tail -$N | while read file; do # useless animation
+	hsetroot -fill ~/.wallpaper/$file -tint '#3c6f86'; sleep 0.1; done
+hsetroot -fill $WALLPAPER -tint '#9ccfe6'
 dunst \
 -lb "$BACKGROUND" -lf "$FOREGROUND" -lfr "$GREEN" \
 -nb "$BACKGROUND" -nf "$FOREGROUND" -nfr "$BLUE" \
 -cb "$BACKGROUND" -cf "$FOREGROUND" -cfr "$RED" &
-sleep 1
-notify-send "Notification" "Bspwmrc Loaded"
+sleep 0.5
+notify-send "Bspwm Loaded" "With $SHORTCOLOR color and $SHORTWALLPAPER wallpaper"

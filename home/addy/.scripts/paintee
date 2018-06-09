@@ -27,7 +27,7 @@ getcolors () {
 	ALTWHITE="$(xrdb -query | grep 'color15:'| awk '{print $NF}')"
 }
 
-echocolors () {
+cachecolors () {
 	read -d '' cache <<- EOF
 	FOREGROUND="${FOREGROUND}"
 	BACKGROUND="${BACKGROUND}"
@@ -82,7 +82,7 @@ main () {
 	fi
 
 	getcolors
-	echocolors
+	cachecolors
 	echo "$cache" > ~/.cache/paintee
 	sendescape
 }
