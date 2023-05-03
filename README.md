@@ -3,7 +3,7 @@ A repository contains personal backup of my Debian Linux setup.
 
 ## Preview
 ### Click to play the short video
-[![workflow](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/workflow.png)](https://www.youtube.com/watch?v=ReLOM4UezHQ "workflow") <br />
+[![workflow](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/workflow.png)](https://www.youtube.com/watch?v=ReLOM4UezHQ "workflow") <br />
 **Short Explanations :** Every login (or Bspwm reload), random colorscheme from *~/.colors/* folder will be loaded.
 Bspwm, Lemonbar, URxvt, Rofi, and Dunst will use the same colourscheme from that random picked colouscheme.
 If there is URxvt window opened on Bspwm reload, the URxvt colourscheme will be reloaded on the fly.
@@ -12,19 +12,19 @@ The wallpaper is also randomly picked from *~/.wallpaper/* folder.
 ## Colors
 All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at least I come with original colorscheme. <br />
 ### Cellia
-![cellia](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/cellia.png) <br />
+![cellia](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/cellia.png) <br />
 **Now Playing :** Dragonforce - My Spirit Will Go On <br />
 ### Liontin
-![liontin](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/liontin.png) <br />
+![liontin](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/liontin.png) <br />
 **Now Playing :** Avenged Sevenfold - The Beast and The Harlot <br />
 ### Sharp
-![sharp](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/sharp.png) <br />
+![sharp](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/sharp.png) <br />
 **Now Playing :** Dream Theater - The Glass Prison <br />
 ### Violla
-![violla](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/violla.png) <br />
+![violla](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/violla.png) <br />
 **Now Playing :** Metallica - Master of Puppets <br />
 ### Vluvy
-![vluvy](https://raw.githubusercontent.com/addy-dclxvi/void-bspwm-dotfiles/master/preview/vluvy.png) <br />
+![vluvy](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/vluvy.png) <br />
 **Now Playing :** System of a Down - Chop Suey <br />
 
 ## Details
