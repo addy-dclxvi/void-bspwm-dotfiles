@@ -1,5 +1,5 @@
 ## Introduction
-A repository contains personal backup of my Void Linux setup.
+A repository contains personal backup of my Debian Linux setup.
 
 ## Preview
 ### Click to play the short video
@@ -30,9 +30,9 @@ All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at 
 ## Details
 - **Desktop Environment :** None
 - **Graphical Server :** Xorg Minimal
-- **Video Driver :** xf86-video-intel
+- **Video Driver :** xserver-xorg-video-all
 - **Touchpad Driver :** Synaptics
-- **Display Manager :** autox
+- **Display Manager :** lightdm
 - **Window Manager** : Bspwm
 - **Panel :** Lemonbar
 - **Wallpaper Handler :** hsetroot
@@ -41,18 +41,18 @@ All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at 
 - **File Manager :** Thunar
 - **Image Viewer :** Viewnior
 - **Screenshooter :** scrot
-- **Web Browser :** Firefox
+- **Web Browser :** Chromium
 - **Terminal :** URxvt
 - **Terminal Font :** tewi
 - **CLI Text Editor :** Vim
-- **GUI Text Editor :** Geany
+- **GUI Text Editor :** VSCode
 - **CLI Music Player :** ncmpcpp
-- **GUI Music Player :** Audacious
-- **Multimedia Player :** Mpv
+- **GUI Music Player :** Spotify
+- **Multimedia Player :** VLC
 - **Encoder/Decoder :** ffmpeg
 - **PDF Reader :** Evince
 - **Archive Manager :** File Roller
-- **IRC Client :** weechat
+- **IRC Client :** zapzap(whatsapp desktop)
 - **GTK Engine :** Murrine
 - **GTK Theme :** Adapta Nokto Eta
 - **GTK Icons :** Papirus
@@ -61,53 +61,25 @@ All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at 
 - **CLI Shell :** Zsh
 - **Notification Daemon :** Dunst
 - **Sound Mixer :** ALSA
-- **Task Manager :** htop
+- **Task Manager :** bashtop
 - **Init :** runit
 - **SystemD :** No
 - **C Library :** GLibC
+- **Node manager :** NVM
 
 ## Blueprint
 A small note I wrote when I built this setup. So, if the next time I install it again, I would know what to do.
 Sorry, I can't write a proper guide, I don't even recommend You to follow this note.
 And don't use any file outside the home folder unless You know what are You doing.
-- Don't underestimate Void installation difficulty.
-- Install Void Linux iso like usual (pick the DE-less iso).
+- Underestimate Debian installation difficulty (it's easy).
 - Remove the installation disk, reboot, then login.
-- `sudo visudo`. Make *wheel* group can perform sudo without asking password. Example in */etc/sudoers*.
-- Enable wireless `sudo ip link set up wlp2s0` (wlp2s0 is my network interface).
-- Connect to wifi using *wpa_supplicant*. The configuration is in */etc/wpa_supplicant* folder.
-And the service script is in */etc/sv/wpa_supplicant/run*. Example files are included in this repo.
-In case of needed, PSK can be generated using 
-`sudo wpa_passphrase "Silence of The LANs" hackthisifyoucan >> /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf`
-(delete first if there is already a file with that name).
-- Make sure to enable the *wpa_supplicant* and *dhcpcd* service `sudo ln -s /etc/sv/wpa_supplicant /var/service/` 
-(do the same with dhcpcd). Maybe reboot is needed after that.
-- In case `ping google` command says the network is unreachable. Connect manually using
-`sudo wpa_supplicant -B -i wlp2s0 -c /etc/wpa_supplicant/wpa_supplicant-wlp2s0.conf` 
-- Do system upgrade `sudo xbps-install -Syu`
-- Install `wget git zsh`
-- Install *oh-my-zsh* using *wget* 
-`sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"`
-- Shell should be changed to zsh automatically. If not, do `sudo chsh addy`
-- Clone this repository `git clone --depth=1 https://github.com/addy-dclxvi/void-bspwm-dotfiles.git`
-- Deploy the dotfiles recursively `cp -a void-bspwm-dotfiles/home/addy/. ~`
-- `sudo xbps-install Adapta ConsoleKit2 Thunar alsa-utils android-tools audacious audacious-plugins autox breeze-snow-cursor-theme bspwm cava dunst evince ffmpeg file-roller firefox geany gtk-engine-murrine gvfs gvfs-mtp hsetroot htop intel-ucode lemonbar lxappearance mpc mpd mpv ncmpcpp neofetch noto-fonts-ttf ntfs-3g papirus-icon-theme rofi rxvt-unicode scrot slop sxhkd tumbler viewnior vim weechat xbacklight xdo xf86-input-synaptics xf86-video-intel xorg-fonts xorg-minimal xprop xrdb xsel xset xsetroot xsettingsd xtitle youtube-dl`
-- In case of lazy, skip the step above. 
-Do this instead `chmod +x void-bspwm-dotfiles/install-packages.sh` then `sh void-bspwm-dotfiles/install-packages.sh`
-- Add `HARDWARECLOCK=localtime` to */etc/rc.conf*, because my hardware clock is my localtime instead of UTC.
-- Configure *autox* service in */etc/sv/autox/conf*. The example of configuration is included in this repo.
-- Set *udev* rules in */etc/udev/rules.d/* to make my phone can be mounted as MTP Devices.
-Vendor ID and Product ID can be found using `mtp-detect`
-- Copy */etc/hosts* file with Ad-Blocker.
-- Edit */etc/fstab* to make some partition mounted on boot.
-- Enable ALSA using `alsamixer` command. Then use arrow keys to set volume.
-- Uncomment needed locality in */etc/default/libc-locales*
-- Set my locality in */etc/locale.conf*
-- `sudo xbps-reconfigure -f glibc-locales`
-- Make sure there is `early_microcode=yes` in */etc/dracut.conf.d/intel_ucode.conf*
-- `sudo xbps-reconfigure -f linux4.16` (4.16 is the current kernel version).
-- Make Thunar can mount partitions without asking root permission to make my life easier. 
-Can be achieved by editing */usr/share/polkit-1/actions/org.freedesktop.UDisks2.policy* file.
+- `su -`
+- `apt-get install sudo`
+- `usermod -aG sudo <username>`
+- Install `git`
+- Clone this repository `git clone --depth=1 https://github.com/alphabril/debian-bspwm-dotfiles.git`
+- Deploy the dotfiles recursively `cp -a debian-bspwm-dotfiles/home/addy/. ~`
+- `cd debian-bspwm && sh install.sh`
 - Add X.org configuration to */etc/X11/xorg.conf.d/*.
 The *70-synaptics.conf* file is used to enable side scrolling both vertical & horizontal, and disable tap to click & two finger scrolling.
 *99-killX.conf* is used to enable emergency button **Control + Alt + Backspace** to restart X, just in case of freeze on X.
