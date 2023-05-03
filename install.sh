@@ -1,3 +1,6 @@
+cp -a debian-bspwm-dotfiles/home/addy/. ~
+chmod +x ~/.config/bspwm/bspwmrc
+chmod +x ~/.scripts/*
 sudo apt-get update
 sudo apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
 sudo apt-get install xfonts-base xserver-xorg-input-all xinit xserver-xorg-video-all
@@ -35,4 +38,5 @@ sudo ./build
 cd ~
 sudo apt-get install runit
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source ~/.zshrc
 nvm install node

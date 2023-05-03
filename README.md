@@ -71,40 +71,15 @@ All base16 colorschemes here are my homebrew. Doesn't look nice, but finally at 
 A small note I wrote when I built this setup. So, if the next time I install it again, I would know what to do.
 Sorry, I can't write a proper guide, I don't even recommend You to follow this note.
 And don't use any file outside the home folder unless You know what are You doing.
-- Underestimate Debian installation difficulty (it's easy).
+- Underestimate Debian installation difficulty (it's easy) but don't forget to do a minimal install.
+![minimal](https://raw.githubusercontent.com/alphabril/debian-bspwm-dotfiles/master/preview/minimal.png) <br />
 - Remove the installation disk, reboot, then login.
 - `su -`
-- `apt-get install sudo`
+- `apt-get install sudo git`
 - `usermod -aG sudo <username>`
-- Install `git`
-- Clone this repository `git clone --depth=1 https://github.com/alphabril/debian-bspwm-dotfiles.git`
-- Deploy the dotfiles recursively `cp -a debian-bspwm-dotfiles/home/addy/. ~`
-- `cd debian-bspwm && sh install.sh`
-- Add X.org configuration to */etc/X11/xorg.conf.d/*.
-The *70-synaptics.conf* file is used to enable side scrolling both vertical & horizontal, and disable tap to click & two finger scrolling.
-*99-killX.conf* is used to enable emergency button **Control + Alt + Backspace** to restart X, just in case of freeze on X.
-- Remove unused service in */var/service/*. Like TTY3, TTY4, TTY5, TTY6, and SSHD. They're just symlinks, can be restored easily when needed.
-- Enable *autox*, *cgmanager*, *consolekit*, and *dbus* service.
-- Make *bspwmrc* executable `chmod +x ~/.config/bspwm/bspwmrc`
-- Make every scripts in *~/.scripts* folder executable `chmod +x ~/.scripts/*`
+- Clone this repository `git clone https://github.com/alphabril/debian-bspwm-dotfiles.git`
+- `sh debian-bspwm-dotfiles/install.sh`
 - Reboot
-
-## Cherry Pick
-If You only need the Bspwm configuration without fully replicate this setup, You need:
-- *~/.config/bspwm/bspwmrc*
-- *~/.config/sxhkd/sxhkdrc*
-- *~/.config/dunst/dunstrc*
-- *~/.scripts/paintee*
-- *~/.scripts/rofia*
-- *~/.scripts/urdraw*
-- *~/.scripts/vanela*
-- *~/.urxvt/*
-- *~/.fonts/*
-- *~/.colors/*
-- *~/.wallpaper/*
-- *~/.Xresources*
-- *~/.xsettingsd*
-- And these packages `bspwm dunst hsetroot lemonbar noto-fonts-ttf rofi rxvt-unicode slop sxhkd xdo xrdb xsel xset xsetroot xsettingsd xtitle` <br />
 
 Notes
 - Inspect the scripts before use. Every scripts are well commented.
